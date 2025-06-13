@@ -18,7 +18,7 @@ export class MyChart extends Chart {
             containers: [
               {
                 name: 'app-container',
-                image: 'ghcr.io/dbrookesspc/k8s-hello-world:5283e7ef0b94475dee168b7ce9c2ffa6f814b4226ca16e610660b7be2233136a',
+                image: 'ghcr.io/dbrookesspc/k8s-hello-world:a8bf607b878221f7e6aa17cb8fe557c9cdd0638bfc1b57cfdf86a25731934b4d',
                 ports: [{ containerPort: 80 }]
               }
             ],
@@ -31,7 +31,7 @@ export class MyChart extends Chart {
       spec: {
         selector: { app: appLabel },
         ports: [{ port: 80, targetPort: { value: 80 } }],
-        type: 'LoadBalancer' // or 'NodePort' for local testing
+        type: 'NodePort' // or 'NodePort' for local testing
       }
     });
   }

@@ -13,7 +13,7 @@ spec:
         app: helloworld
     spec:
       containers:
-        - image: ghcr.io/dbrookesspc/k8s-hello-world:5283e7ef0b94475dee168b7ce9c2ffa6f814b4226ca16e610660b7be2233136a
+        - image: ghcr.io/dbrookesspc/k8s-hello-world:a8bf607b878221f7e6aa17cb8fe557c9cdd0638bfc1b57cfdf86a25731934b4d
           name: app-container
           ports:
             - containerPort: 80
@@ -30,4 +30,4 @@ spec:
       targetPort: 80
   selector:
     app: helloworld
-  type: LoadBalancer
+  type: NodePort
