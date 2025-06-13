@@ -4,7 +4,7 @@ import { KubeDeployment, KubeService } from './imports/k8s';
 
 export class MyChart extends Chart {
   constructor(scope: Construct, ns: string, appLabel: string) {
-    super(scope,ns);
+    super(scope, ns);
 
     // define resources here
     // Define a Kubernetes Deployment
@@ -27,12 +27,12 @@ export class MyChart extends Chart {
       }
     });
     new KubeService(this, 'loadbalancer', {
-  spec: {
-    selector: { app: appLabel },
-    ports: [{ port: 80, targetPort: { value: 80 } }],
-    type: 'LoadBalancer' // or 'NodePort' for local testing
-  }
-});
+      spec: {
+        selector: { app: appLabel },
+        ports: [{ port: 80, targetPort: { value: 80 } }],
+        type: 'LoadBalancer' // or 'NodePort' for local testing
+      }
+    });
   }
 }
 
