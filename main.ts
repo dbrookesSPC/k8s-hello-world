@@ -1,6 +1,6 @@
 import { Construct } from 'constructs';
 import { App, Chart } from 'cdk8s';
-import { KubeDeployment } from './imports/k8s';
+import { KubeDeployment, KubeService } from './imports/k8s';
 
 export class MyChart extends Chart {
   constructor(scope: Construct, ns: string, appLabel: string) {
@@ -26,6 +26,13 @@ export class MyChart extends Chart {
         }
       }
     });
+    new KubeService(this, 'loadbalancer', {
+  spec: {
+    selector: { app: appLabel },
+    ports: [{ port: 80, targetPort: { value: 80 } }],
+    type: 'LoadBalancer' // or 'NodePort' for local testing
+  }
+});
   }
 }
 
