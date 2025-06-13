@@ -17,6 +17,8 @@ spec:
           name: app-container
           ports:
             - containerPort: 80
+      imagePullSecrets:
+        - name: ghcr-secret
 ---
 apiVersion: v1
 kind: Service

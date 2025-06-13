@@ -21,7 +21,8 @@ export class MyChart extends Chart {
                 image: 'ghcr.io/dbrookesspc/k8s-hello-world:latest',
                 ports: [{ containerPort: 80 }]
               }
-            ]
+            ],
+            imagePullSecrets: [{ name: 'ghcr-secret' }]
           }
         }
       }
