@@ -30,5 +30,5 @@ export class MyChart extends Chart {
 }
 
 const app = new App();
-new MyChart(app, 'k8s-hello-world', 'hello world');
+new MyChart(app, 'k8s-hello-world', 'helloworld');
 app.synth();

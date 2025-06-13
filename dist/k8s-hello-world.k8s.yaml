@@ -6,11 +6,11 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: hello world
+      app: helloworld
   template:
     metadata:
       labels:
-        app: hello world
+        app: helloworld
     spec:
       containers:
         - image: nginx:1.19.10
