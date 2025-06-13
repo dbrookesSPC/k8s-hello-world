@@ -18,7 +18,7 @@ export class MyChart extends Chart {
             containers: [
               {
                 name: 'app-container',
-                image: 'nginx:1.19.10',
+                image: 'ghcr.io/dbrookesspc/k8s-hello-world:latest',
                 ports: [{ containerPort: 80 }]
               }
             ]
