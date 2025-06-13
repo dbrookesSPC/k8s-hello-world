@@ -13,7 +13,7 @@ spec:
         app: helloworld
     spec:
       containers:
-        - image: nginx:1.19.10
+        - image: ghcr.io/dbrookesspc/k8s-hello-world:latest
           name: app-container
           ports:
             - containerPort: 80
